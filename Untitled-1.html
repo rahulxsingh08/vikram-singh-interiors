@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikram Singh Interiors - 25+ Years Trusted Interior Work</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; padding: 1rem 20px; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #d4af37; }
+        .tagline { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+        .header-buttons { display: flex; gap: 10px; }
+        .btn { padding: 12px 24px; border: none; border-radius: 8px; font-weight: bold; text-decoration: none; cursor: pointer; transition: all 0.3s; }
+        .btn-whatsapp { background: #25D366; color: white; }
+        .btn-call { background: #007bff; color: white; }
+        .btn-primary { background: #d4af37; color: #333; }
+        .btn-secondary { background: transparent; color: #d4af37; border: 2px solid #d4af37; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 120px 0 80px; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
+        .hero-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        
+        /* Problem vs Trust */
+        .problem-trust { padding: 80px 0; background: #f8f9fa; }
+        .problem-trust .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 3rem; }
+        .problem, .trust { text-align: center; }
+        .problem h3 { color: #e74c3c; font-size: 2rem; margin-bottom: 1rem; }
+        .trust h3 { color: #27ae60; font-size: 2rem; margin-bottom: 1rem; }
+        .problem ul, .trust ul { list-style: none; padding: 0; }
+        .problem li { background: #ffeaea; margin: 10px 0; padding: 15px; border-radius: 8px; border-left: 5px solid #e74c3c; }
+        .trust li { background: #e8f5e8; margin: 10px 0; padding: 15px; border-radius: 8px; border-left: 5px solid #27ae60; }
+        
+        /* Services */
+        .services { padding: 80px 0; }
+        .services h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #333; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+        .service-card { text-align: center; padding: 40px 20px; border: 2px solid #eee; border-radius: 15px; transition: all 0.3s; cursor: pointer; }
+        .service-card:hover { border-color: #d4af37; transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .service-card i { font-size: 3rem; color: #d4af37; margin-bottom: 1rem; }
+        .quote-text { grid-column: 1 / -1; text-align: center; margin-top: 2rem; font-size: 1.1rem; color: #666; }
+        
+        /* Portfolio */
+        .portfolio { padding: 80px 0; background: #f8f9fa; }
+        .portfolio h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .portfolio-item { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .portfolio-item img { width: 100%; height: 250px; object-fit: cover; }
+        .portfolio-caption { padding: 20px; text-align: center; font-weight: bold; color: #d4af37; }
+        
+        /* Reviews */
+        .reviews { padding: 80px 0; }
+        .reviews h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .review-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 15px; text-align: center; }
+        .stars { color: #ffd700; font-size: 1.5rem; margin-bottom: 1rem; }
+        
+        /* Guarantee */
+        .guarantee { padding: 80px 0; background: #f8f9fa; text-align: center; }
+        .guarantee h2 { font-size: 2.5rem; margin-bottom: 2rem; color: #27ae60; }
+        .guarantee ul { list-style: none; max-width: 600px; margin: 0 auto; }
+        .guarantee li { background: white; margin: 15px 0; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); font-size: 1.1rem; }
+        
+        /* Lead Capture */
+        .lead-capture { padding: 80px 0; background: linear-gradient(135deg, #d4af37 0%, #f1c40f 100%); color: #333; }
+        .lead-capture h2 { font-size: 2.5rem; margin-bottom: 1rem; text-align: center; }
+        .lead-capture p { font-size: 1.2rem; margin-bottom: 3rem; text-align: center; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 800px; margin: 0 auto 2rem; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group label { margin-bottom: 0.5rem; font-weight: bold; }
+        .form-group input, .form-group select, .form-group textarea { padding: 15px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #333; }
+        .form-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .pricing-disclosure { background: rgba(255,255,255,0.9); padding: 20px; border-radius: 10px; margin-top: 2rem; text-align: center; font-size: 0.95rem; }
+        
+        /* Contact */
+        .contact { padding: 80px 0; background: #333; color: white; }
+        .contact-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: center; }
+        .contact-item i { font-size: 2.5rem; color: #d4af37; margin-bottom: 1rem; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .form-grid { grid-template-columns: 1fr; }
+            .hero-buttons, .form-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 300px; }
+            .problem-trust .grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+    <img src="C:\Users\goldi\Downloads\vikram singh logo.png" alt="Logo" style="height: 40px; width: auto;">
+    
+    <span>Vikram Singh Interiors</span>
+</div>
+                    <div class="tagline">👉 "25+ Years Trusted Interior Work | No Hidden Charges"</div>
+                </div>
+                <div class="header-buttons">
+                    <a href="https://wa.me/919848367221?text=Hi%20Vikram%20Singh%20Interiors%2C%20I%20need%20interior%20quote" class="btn btn-whatsapp" target="_blank">
+                        💬 WhatsApp Now
+                    </a>
+                    <a href="tel:919848367221" class="btn btn-call">
+                        📞 Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>👉 Complete Interior Work Without Price Shocks or Incomplete Jobs</h1>
+            <p>We finish what we start. Transparent pricing. Trusted for 25+ years.</p>
+            <div class="hero-buttons">
+                <a href="#lead-capture" class="btn btn-primary">🔘 Get Free Estimate</a>
+                <a href="https://wa.me/919848367221?text=Hi%20Vikram%20Singh%20Interiors%2C%20I%20want%20free%20estimate" class="btn btn-secondary" target="_blank">🔘 Chat on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Problem vs Trust -->
+    <section class="problem-trust">
+        <div class="container">
+            <div class="problem-trust-content">
+                <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1rem;">What Customers Face ❌ vs What You Get ✅</h2>
+                <div class="grid">
+                    <div class="problem">
+                        <h3>❌ What Customers Face:</h3>
+                        <ul>
+                            <li>Price suddenly increased</li>
+                            <li>Work left incomplete</li>
+                            <li>Low-quality finish</li>
+                        </ul>
+                    </div>
+                    <div class="trust">
+                        <h3>✅ What You Get With Us:</h3>
+                        <ul>
+                            <li>Honest pricing (no surprises)</li>
+                            <li>Work completion guarantee</li>
+                            <li>Experienced team for all services</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Services -->
+    <section class="services">
+        <div class="container">
+            <h2>🛠️ Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-paint-roller"></i>
+                    <h3>Painting</h3>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-hammer"></i>
+                    <h3>Carpentry</h3>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-wrench"></i>
+                    <h3>Plumbing</h3>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>False Ceiling</h3>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-plug"></i>
+                    <h3>Electrical</h3>
+                </div>
+            </div>
+            <div class="quote-text">
+                👉 "Get personalized quote based on your requirement"
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Portfolio -->
+    <section class="portfolio">
+        <div class="container">
+            <h2>🖼️ Our Work</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=250&fit=crop" alt="Interior">
+                    <div class="portfolio-caption">👉 "2BHK Full Interior Completed Successfully"</div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://aastitvastore.com/wp-content/uploads/2021/06/moden-elevation-227.jpg" alt="Interior">
+                    <div class="portfolio-caption">👉 "3BHK Premium Interior Transformation"</div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://i.pinimg.com/736x/a8/0f/a7/a80fa76261df20ae0f34f986e8d81243.jpg" alt="Interior">
+                    <div class="portfolio-caption">👉 "Office Interior Completed On Time"</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Reviews -->
+    <section class="reviews">
+        <div class="container">
+            <h2>⭐ What Our Customers Say</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Price was fair and not increased later. Amazing work!"</p>
+                    <strong>- Priya S.</strong>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Work completed fully without delay. Highly recommended!"</p>
+                    <strong>- Rajesh K.</strong>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Transparent pricing from start to finish. Perfect job!"</p>
+                    <strong>- Anita M.</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Trust Guarantee -->
+    <section class="guarantee">
+        <div class="container">
+            <h2>🛡️ Our Promise to You</h2>
+            <ul>
+                <li>✅ No hidden charges</li>
+                <li>✅ Work will not be left incomplete</li>
+                <li>✅ Proper commitment before starting</li>
+                <li>✅ Fair pricing after inspection</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 8 & 9. Lead Capture + Smart Pricing -->
+    <section class="lead-capture" id="lead-capture">
+        <div class="container">
+            <h2>💬 Get Your Free Estimate</h2>
+            <p>Tell us your requirement and get a minimum cost estimate instantly.</p>
+            <form id="quoteForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" id="phone" required pattern="[0-9]{10}" title="Please enter a 10-digit number">
+                    </div>
+                    <div class="form-group">
+                        <label>Location</label>
+                        <input type="text" id="location" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Type of Work</label>
+                        <select id="service" required>
+                            <option value="">Select Service</option>
+                            <option>Painting</option>
+                            <option>Carpentry</option>
+                            <option>Plumbing</option>
+                            <option>False Ceiling</option>
+                            <option>Electrical</option>
+                            <option>Full Interior</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label>Message</label>
+                        <textarea id="message" rows="4" placeholder="Describe your requirements..."></textarea>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">📩 Send to WhatsApp</button>
+                    <a href="https://wa.me/919848367221?text=Hi%20Vikram%20Singh%20Interiors%2C%20I%20need%20interior%20quote" class="btn btn-secondary" target="_blank">💬 Direct WhatsApp</a>
+                </div>
+            </form>
+            <div class="pricing-disclosure">
+                👉 "We provide minimum estimated cost after understanding your requirement. Final pricing depends on site measurement and material selection."
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Contact -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>📞 Call Now</h3>
+                    <p><a href="tel:919848367221" style="color: white;">+91 98483 67221</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>💬 WhatsApp</h3>
+                    <p><a href="https://wa.me/919848367221" style="color: white;" target="_blank">+91 98483 67221</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>🏠 Visit Us</h3>
+                    <p>Hyderabad, Telangana<br>India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // WhatsApp Form Submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value || 'No additional message';
+            
+            // Create WhatsApp message
+            const whatsappMessage = `🔥 *NEW QUOTE REQUEST* 🔥%0A%0A👤 *Name:* ${name}%0A📱 *Phone:* ${phone}%0A📍 *Location:* ${location}%0A🛠️ *Service:* ${service}%0A💬 *Message:* ${message}%0A%0A*Vikram Singh Interiors - Free Estimate Request*`;
+            
+            // Open WhatsApp
+            const whatsappURL = `https://wa.me/919848367221?text=${whatsappMessage}`;
+            window.open(whatsappURL, '_blank');
+            
+            // Optional: Reset form or show success
+            alert('✅ Your quote request has been sent to WhatsApp! We will contact you shortly.');
+        });
+    </script>
+</body>
+</html>
