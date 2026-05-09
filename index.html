@@ -92,6 +92,69 @@
             .btn { width: 100%; max-width: 300px; }
             .problem-trust .grid { grid-template-columns: 1fr; gap: 30px; }
         }
+
+        @media (max-width: 768px) {
+
+  .container {
+    padding: 0 15px;
+  }
+
+  /* Header Fix */
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  /* Fix text breaking */
+  .logo-text {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  /* Buttons Fix */
+  .header-buttons {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .btn {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Hero Section */
+  .hero h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+}
     </style>
 </head>
 <body>
